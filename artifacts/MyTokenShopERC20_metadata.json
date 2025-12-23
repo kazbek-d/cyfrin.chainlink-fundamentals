@@ -715,7 +715,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/token_shop/MyTokenShopERC20.sol": "MyTokenShopERC20"
+			"contracts/data-feeds/MyTokenShopERC20.sol": "MyTokenShopERC20"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -801,7 +801,7 @@
 				"dweb:/ipfs/QmfDRc7pxfaXB2Dh9np5Uf29Na3pQ7tafRS684wd3GLjVL"
 			]
 		},
-		"contracts/token_shop/MyTokenShopERC20.sol": {
+		"contracts/data-feeds/MyTokenShopERC20.sol": {
 			"keccak256": "0x9a906066f0167ac3a4bb005e55aa9a13d9bb5c03b348300366f98e1d7e997ace",
 			"license": "MIT",
 			"urls": [
