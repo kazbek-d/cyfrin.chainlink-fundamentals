@@ -15,3 +15,7 @@ Our shop will leverage Chainlink Data Feeds to establish accurate token pricing 
 - Determine the appropriate amount of tokens to mint based on our fixed USD token price.
 
 - Mint and transfer the calculated tokens directly to the buyer.
+
+### Deployed Addresses
+- Token Shop: 0xF3a2Fd486894F378a6f84CD70b53464Ff9c2EF21
+- Minter: 0x1915B272B3Ce8982Ff99AE1E4efcD04b8c679CB1
