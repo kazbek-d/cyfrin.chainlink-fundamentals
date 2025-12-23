@@ -136,7 +136,7 @@
 				"name": "i_token",
 				"outputs": [
 					{
-						"internalType": "contract MyERC20",
+						"internalType": "contract MyTokenShopERC20",
 						"name": "",
 						"type": "address"
 					}
@@ -228,7 +228,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/TokenShop.sol": "TokenShop"
+			"contracts/token_shop/TokenShop.sol": "TokenShop"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -330,20 +330,20 @@
 				"dweb:/ipfs/QmfDRc7pxfaXB2Dh9np5Uf29Na3pQ7tafRS684wd3GLjVL"
 			]
 		},
-		"contracts/MyERC20.sol": {
-			"keccak256": "0x7c5a95e75a86748201f97cad8c0ef04fcca465d7094007ddeb2b651d383bb9f5",
+		"contracts/token_shop/MyTokenShopERC20.sol": {
+			"keccak256": "0x9a906066f0167ac3a4bb005e55aa9a13d9bb5c03b348300366f98e1d7e997ace",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://72f6882ee1086a92466f0b5aae3c1a7d13906c0c8906880c2e4161b0c5683ed7",
-				"dweb:/ipfs/QmVYfUSqDebkhd4Nx1rMwrj3W1S4RaFdT14KyhQ7qLJtfC"
+				"bzz-raw://896112a017b895cb60810fb40110ce5d0f0422aa81b44464ae46d24b1e040921",
+				"dweb:/ipfs/Qme5NfUBLHSubf1pcgwAQYcBqy4mDk4shiv91GuatUSuDB"
 			]
 		},
-		"contracts/TokenShop.sol": {
-			"keccak256": "0x921fc18734d0aa9e5864d3ef1b635f80b425aa35c076194c9475ce014a5c2b44",
+		"contracts/token_shop/TokenShop.sol": {
+			"keccak256": "0xa601ff594257c3b69741131df7a167d51ce930620452079ffd878a871f29092b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6e227aa20d7ff82324c965485eed90995d2a7cf13ee1094240ef9d2860ef8d18",
-				"dweb:/ipfs/QmcyJhsWzuvF9z9ufC6JC9v7fscZedhoCUantheP4naETu"
+				"bzz-raw://ec226c5121cdf05e59e70cc2d5fc4f99c887efa344c227b97da4dc05fe047540",
+				"dweb:/ipfs/QmYiryfRdfkyW8oPw62cEJnopdJW33U8jtyHKVZNrfohRE"
 			]
 		}
 	},

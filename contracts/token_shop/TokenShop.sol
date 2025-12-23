@@ -3,12 +3,12 @@ pragma solidity ^0.8.26;
 
 import {AggregatorV3Interface} from "@chainlink/contracts@1.3.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 import {Ownable} from "@openzeppelin/contracts@5.2.0/access/Ownable.sol";
-import {MyERC20} from "./MyERC20.sol";
+import {MyTokenShopERC20} from "./MyTokenShopERC20.sol";
 
 contract TokenShop is Ownable {
 
     AggregatorV3Interface internal immutable i_priceFeed;
-    MyERC20 public immutable i_token;
+    MyTokenShopERC20 public immutable i_token;
 
     uint256 public constant TOKEN_DECIMALS = 18;
     uint256 public constant TOKEN_USD_PRICE = 2 * 10 ** TOKEN_DECIMALS; // 2 USD with 18 decimals
@@ -19,7 +19,7 @@ contract TokenShop is Ownable {
     error TokenShop__CouldNotWithdraw();
 
     constructor(address tokenAddress) Ownable(msg.sender) {
-        i_token = MyERC20(tokenAddress);
+        i_token = MyTokenShopERC20(tokenAddress);
         /**
         * Network: Sepolia
         * Aggregator: ETH/USD
