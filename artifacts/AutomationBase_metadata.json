@@ -1,0 +1,51 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "OnlySimulatedBackend",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/automation/CustomLogic_flattened.sol": "AutomationBase"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/automation/CustomLogic_flattened.sol": {
+			"keccak256": "0x96e74ab70ab03f1dc4deeb3238cc1963f617747bd98e20327dc5d0156ede9f64",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://120f208ed649214c5aa4a25027b2b40839d6bb01596f57d4dc11cc8a8a817424",
+				"dweb:/ipfs/QmY1D6Y5yMPfbLoMs4aqDBpvemNgYhXtnzdTr9ZuPxf29m"
+			]
+		}
+	},
+	"version": 1
+}
