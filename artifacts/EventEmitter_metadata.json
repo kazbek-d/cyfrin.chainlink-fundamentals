@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "msgSender",
+						"type": "address"
+					}
+				],
+				"name": "WantsToCount",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "emitCountLog",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/automation/log-trigger/EventEmitter.sol": "EventEmitter"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/automation/log-trigger/EventEmitter.sol": {
+			"keccak256": "0x39f065e4b1b62bcb2db062785c245572965d906805156b69f7e97aa15fa537bd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b8bf10d3c2cb2194ff7f8c57748798e1d1fb7052a24df3dc9464b4ed38afb74f",
+				"dweb:/ipfs/QmW9wBQeL6MDNktUVdXB3nRuzfcc8Qo5hwM2s3ndnLRhX7"
+			]
+		}
+	},
+	"version": 1
+}
