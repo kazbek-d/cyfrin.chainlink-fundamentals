@@ -13,32 +13,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "contract IERC20",
-						"name": "token",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "currentBalance",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "requiredAmount",
-						"type": "uint256"
-					}
-				],
-				"name": "CCIPTokenSender__InsufficientBalance",
-				"type": "error"
-			},
-			{
-				"inputs": [],
-				"name": "CCIPTokenSender__NothingToWithdraw",
-				"type": "error"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -56,6 +30,32 @@
 					}
 				],
 				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentBalance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "requiredAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "Sender__InsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "Sender__NothingToWithdraw",
 				"type": "error"
 			},
 			{
@@ -158,6 +158,11 @@
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_target",
+						"type": "address"
 					}
 				],
 				"name": "transferTokens",
@@ -221,7 +226,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ccip/CCIPTokenSender.sol": "CCIPTokenSender"
+			"contracts/ccip/Sender.sol": "Sender"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -299,12 +304,20 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/ccip/CCIPTokenSender.sol": {
-			"keccak256": "0x376d383f570beb576b25cdbafa9c0e4acae6c4ab663f5494f16e0caed95fe9c4",
+		"contracts/ccip/Sender.sol": {
+			"keccak256": "0x8e75766825a7bb60eb1a5f69ccac8950562540ff21c8f80f46fa975ac677597c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://44804f22b29a6e3cdd1fc9111c8bed235b75e589c1ff9033a1177a8b737cab44",
-				"dweb:/ipfs/QmU5fhziyLbT6tveoQjhJDDY7uTRCB4X4MJBBiGGYKU5mx"
+				"bzz-raw://a5759a98668e21d37c6e0f023d3c87ed4a1942d8312912bef2ed593f5a94ba08",
+				"dweb:/ipfs/Qmevhs5FCyi7R3VfpGS6wVrDBJaKNmA7ixAjjoPupTeg6R"
+			]
+		},
+		"contracts/ccip/interfaces/IVault.sol": {
+			"keccak256": "0x0c7d590cb1f89e64bd3f350d561f0ac7078e8611133a9a2e7688964cff512ad7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a057996092cdf4abdcc55ec95ed8c6edc32e2f249058eca280a19b118a53f0e",
+				"dweb:/ipfs/QmcESEGPq3e3kNLPBSLcHUTd8AKGT17WqA2BtmyfQxX1y4"
 			]
 		}
 	},
