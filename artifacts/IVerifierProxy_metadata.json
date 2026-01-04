@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "s_feeManager",
+				"outputs": [
+					{
+						"internalType": "contract IVerifierFeeManager",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "payload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameterPayload",
+						"type": "bytes"
+					}
+				],
+				"name": "verify",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "verifierResponse",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"verify(bytes,bytes)": {
+					"params": {
+						"parameterPayload": "Fee metadata for billing. For the current implementation this is just the abi-encoded fee token ERC-20 address.",
+						"payload": "The encoded data to be verified, including the signed report."
+					},
+					"returns": {
+						"verifierResponse": "The encoded report from the verifier."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"verify(bytes,bytes)": {
+					"notice": "Verifies that the data encoded has been signed. correctly by routing to the correct verifier, and bills the user if applicable."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/data-streams/StreamsUpkeep_flattened.sol": "IVerifierProxy"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/data-streams/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x436dd6cf4b80d0e292b3529350ebb078375c83009e499c65ebba997622db8068",
+			"urls": [
+				"bzz-raw://6c742032b8f1024d7d656808dd9122d1b62ca41f1fa624be00b807d593806270",
+				"dweb:/ipfs/QmUtxKobx2dycW1nVnwWHGGR7JFfrCHTsKuEhRKsDWM26m"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,174 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "payload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameterPayload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "subscriber",
+						"type": "address"
+					}
+				],
+				"name": "processFee",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "payloads",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameterPayload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "subscriber",
+						"type": "address"
+					}
+				],
+				"name": "processFeeBulk",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "configDigest",
+						"type": "bytes32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "addr",
+								"type": "address"
+							},
+							{
+								"internalType": "uint64",
+								"name": "weight",
+								"type": "uint64"
+							}
+						],
+						"internalType": "struct Common.AddressAndWeight[]",
+						"name": "rewardRecipientAndWeights",
+						"type": "tuple[]"
+					}
+				],
+				"name": "setFeeRecipients",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"processFee(bytes,bytes,address)": {
+					"params": {
+						"parameterPayload": "fee payload",
+						"payload": "report to process the fee for",
+						"subscriber": "address of the fee will be applied"
+					}
+				},
+				"processFeeBulk(bytes[],bytes,address)": {
+					"params": {
+						"parameterPayload": "fee payload",
+						"payloads": "reports to process",
+						"subscriber": "address of the user to process fee for"
+					}
+				},
+				"setFeeRecipients(bytes32,(address,uint64)[])": {
+					"params": {
+						"configDigest": "digest of the configuration",
+						"rewardRecipientAndWeights": "the address and weights of all the recipients to receive rewards"
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"processFee(bytes,bytes,address)": {
+					"notice": "Handles fees for a report from the subscriber and manages rewards"
+				},
+				"processFeeBulk(bytes[],bytes,address)": {
+					"notice": "Processes the fees for each report in the payload, billing the subscriber and paying the reward manager"
+				},
+				"setFeeRecipients(bytes32,(address,uint64)[])": {
+					"notice": "Sets the fee recipients according to the fee manager"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/data-streams/StreamsUpkeep_flattened.sol": "IVerifierFeeManager"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/data-streams/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x436dd6cf4b80d0e292b3529350ebb078375c83009e499c65ebba997622db8068",
+			"urls": [
+				"bzz-raw://6c742032b8f1024d7d656808dd9122d1b62ca41f1fa624be00b807d593806270",
+				"dweb:/ipfs/QmUtxKobx2dycW1nVnwWHGGR7JFfrCHTsKuEhRKsDWM26m"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,164 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "subscriber",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "unverifiedReport",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "quoteAddress",
+						"type": "address"
+					}
+				],
+				"name": "getFeeAndReward",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Common.Asset",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "assetAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Common.Asset",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "i_linkAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "i_nativeAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "i_rewardManager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getFeeAndReward(address,bytes,address)": {
+					"params": {
+						"quoteAddress": "The payment token address used for quoting fees and rewards.",
+						"subscriber": "The address attempting to verify the report. A discount is applied if this address is recognized as a subscriber.",
+						"unverifiedReport": "The report data awaiting verification. The content of this report is used to determine the base fee and reward, before considering subscriber discounts."
+					},
+					"returns": {
+						"_0": "fee The fee assessed for verifying the report, with subscriber discounts applied where applicable.",
+						"_1": "reward The reward allocated to the caller for successfully verifying the report.",
+						"_2": "totalDiscount The total discount amount deducted from the fee for subscribers"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getFeeAndReward(address,bytes,address)": {
+					"notice": "Calculates the fee and reward associated with verifying a report, including discounts for subscribers. This function assesses the fee and reward for report verification, applying a discount for recognized subscriber addresses."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/data-streams/StreamsUpkeep_flattened.sol": "IFeeManager"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/data-streams/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x436dd6cf4b80d0e292b3529350ebb078375c83009e499c65ebba997622db8068",
+			"urls": [
+				"bzz-raw://6c742032b8f1024d7d656808dd9122d1b62ca41f1fa624be00b807d593806270",
+				"dweb:/ipfs/QmUtxKobx2dycW1nVnwWHGGR7JFfrCHTsKuEhRKsDWM26m"
+			]
+		}
+	},
+	"version": 1
+}

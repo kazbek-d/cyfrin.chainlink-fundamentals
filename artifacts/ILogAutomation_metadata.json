@@ -1,47 +1,10 @@
 {
 	"compiler": {
-		"version": "0.8.33+commit.64118f21"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
-			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "msgSender",
-						"type": "address"
-					}
-				],
-				"name": "CountedBy",
-				"type": "event"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "bytes32",
-						"name": "_address",
-						"type": "bytes32"
-					}
-				],
-				"name": "bytes32ToAddress",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
 			{
 				"inputs": [
 					{
@@ -93,7 +56,7 @@
 					},
 					{
 						"internalType": "bytes",
-						"name": "",
+						"name": "checkData",
 						"type": "bytes"
 					}
 				],
@@ -110,20 +73,7 @@
 						"type": "bytes"
 					}
 				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "counted",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -143,6 +93,17 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
+				"checkLog((uint256,uint256,bytes32,uint256,bytes32,address,bytes32[],bytes),bytes)": {
+					"details": "To ensure that it is never called, you may want to add the cannotExecute modifier from KeeperBase to your implementation of this method.",
+					"params": {
+						"checkData": "user-specified extra data to provide context to this upkeep",
+						"log": "the raw log data matching the filter that this contract has registered as a trigger"
+					},
+					"returns": {
+						"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+						"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+					}
+				},
 				"performUpkeep(bytes)": {
 					"details": "The input to this method should not be trusted, and the caller of the method should not even be restricted to any single registry. Anyone should be able call it, and the input should be validated, there is no guarantee that the data passed in is the performData returned from checkUpkeep. This could happen due to malicious keepers, racing keepers, or simply a state change while the performUpkeep transaction is waiting for confirmation. Always validate the data passed in.",
 					"params": {
@@ -155,6 +116,9 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
+				"checkLog((uint256,uint256,bytes32,uint256,bytes32,address,bytes32[],bytes),bytes)": {
+					"notice": "method that is simulated by the keepers to see if any work actually needs to be performed. This method does does not actually need to be executable, and since it is only ever simulated it can consume lots of gas."
+				},
 				"performUpkeep(bytes)": {
 					"notice": "method that is actually executed by the keepers, via the registry. The data returned by the checkUpkeep simulation will be passed into this method to actually be executed."
 				}
@@ -164,9 +128,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/automation/log-trigger/LogTrigger.sol": "LogTrigger"
+			"contracts/data-streams/StreamsUpkeep_flattened.sol": "ILogAutomation"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -178,20 +142,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/ILogAutomation.sol": {
-			"keccak256": "0x6efb298ce2d8d406fa48686a169ea7e50192878e25d3a2f9c102cfdeae340e34",
-			"license": "MIT",
+		"contracts/data-streams/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x436dd6cf4b80d0e292b3529350ebb078375c83009e499c65ebba997622db8068",
 			"urls": [
-				"bzz-raw://4de346eeefaef7c0655dbb22e7e3d75df163ede488d578f101d70ab03cebc1ec",
-				"dweb:/ipfs/QmYVrPMe5GVEUeTEZVFsubNkqXLUjYToNb8jAXfKLsh2Ni"
-			]
-		},
-		"contracts/automation/log-trigger/LogTrigger.sol": {
-			"keccak256": "0xe63df1f5fb46451ca574222df46638912a9f484c598331e14e9cf740c7b299a8",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://e841633bc5bbad962e88a8c4e41ef3a299cb3a45a2e5d73cebeebfda4e33aa89",
-				"dweb:/ipfs/QmdHZ8Hm31pe5453sgvP43Ls8yJyeE67F4Z3Qy9wg4nk8f"
+				"bzz-raw://6c742032b8f1024d7d656808dd9122d1b62ca41f1fa624be00b807d593806270",
+				"dweb:/ipfs/QmUtxKobx2dycW1nVnwWHGGR7JFfrCHTsKuEhRKsDWM26m"
 			]
 		}
 	},

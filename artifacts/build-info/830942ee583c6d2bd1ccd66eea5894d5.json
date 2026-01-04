@@ -1,0 +1,715 @@
+{
+	"id": "830942ee583c6d2bd1ccd66eea5894d5",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.19",
+	"solcLongVersion": "0.8.19+commit.7dd6d404",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			".deps/npm/@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n// solhint-disable-next-line interface-starts-with-i\ninterface StreamsLookupCompatibleInterface {\n  error StreamsLookup(string feedParamKey, string[] feeds, string timeParamKey, uint256 time, bytes extraData);\n\n  /**\n   * @notice any contract which wants to utilize StreamsLookup feature needs to\n   * implement this interface as well as the automation compatible interface.\n   * @param values an array of bytes returned from data streams endpoint.\n   * @param extraData context data from streams lookup process.\n   * @return upkeepNeeded boolean to indicate whether the keeper should call performUpkeep or not.\n   * @return performData bytes that the keeper should call performUpkeep with, if\n   * upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.\n   */\n  function checkCallback(\n    bytes[] memory values,\n    bytes memory extraData\n  ) external view returns (bool upkeepNeeded, bytes memory performData);\n\n  /**\n   * @notice this is a new, optional function in streams lookup. It is meant to surface streams lookup errors.\n   * @param errCode an uint value that represents the streams lookup error code.\n   * @param extraData context data from streams lookup process.\n   * @return upkeepNeeded boolean to indicate whether the keeper should call performUpkeep or not.\n   * @return performData bytes that the keeper should call performUpkeep with, if\n   * upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.\n   */\n  function checkErrorHandler(\n    uint256 errCode,\n    bytes memory extraData\n  ) external view returns (bool upkeepNeeded, bytes memory performData);\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			".deps/npm/@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol": {
+				"StreamsLookupCompatibleInterface": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "string",
+									"name": "feedParamKey",
+									"type": "string"
+								},
+								{
+									"internalType": "string[]",
+									"name": "feeds",
+									"type": "string[]"
+								},
+								{
+									"internalType": "string",
+									"name": "timeParamKey",
+									"type": "string"
+								},
+								{
+									"internalType": "uint256",
+									"name": "time",
+									"type": "uint256"
+								},
+								{
+									"internalType": "bytes",
+									"name": "extraData",
+									"type": "bytes"
+								}
+							],
+							"name": "StreamsLookup",
+							"type": "error"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "bytes[]",
+									"name": "values",
+									"type": "bytes[]"
+								},
+								{
+									"internalType": "bytes",
+									"name": "extraData",
+									"type": "bytes"
+								}
+							],
+							"name": "checkCallback",
+							"outputs": [
+								{
+									"internalType": "bool",
+									"name": "upkeepNeeded",
+									"type": "bool"
+								},
+								{
+									"internalType": "bytes",
+									"name": "performData",
+									"type": "bytes"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "errCode",
+									"type": "uint256"
+								},
+								{
+									"internalType": "bytes",
+									"name": "extraData",
+									"type": "bytes"
+								}
+							],
+							"name": "checkErrorHandler",
+							"outputs": [
+								{
+									"internalType": "bool",
+									"name": "upkeepNeeded",
+									"type": "bool"
+								},
+								{
+									"internalType": "bytes",
+									"name": "performData",
+									"type": "bytes"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {
+							"checkCallback(bytes[],bytes)": {
+								"params": {
+									"extraData": "context data from streams lookup process.",
+									"values": "an array of bytes returned from data streams endpoint."
+								},
+								"returns": {
+									"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+									"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+								}
+							},
+							"checkErrorHandler(uint256,bytes)": {
+								"params": {
+									"errCode": "an uint value that represents the streams lookup error code.",
+									"extraData": "context data from streams lookup process."
+								},
+								"returns": {
+									"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+									"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"checkCallback(bytes[],bytes)": "4b56a42e",
+							"checkErrorHandler(uint256,bytes)": "0fb172fb"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"feedParamKey\",\"type\":\"string\"},{\"internalType\":\"string[]\",\"name\":\"feeds\",\"type\":\"string[]\"},{\"internalType\":\"string\",\"name\":\"timeParamKey\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"StreamsLookup\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"values\",\"type\":\"bytes[]\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"checkCallback\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"upkeepNeeded\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"performData\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errCode\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"checkErrorHandler\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"upkeepNeeded\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"performData\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"checkCallback(bytes[],bytes)\":{\"params\":{\"extraData\":\"context data from streams lookup process.\",\"values\":\"an array of bytes returned from data streams endpoint.\"},\"returns\":{\"performData\":\"bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.\",\"upkeepNeeded\":\"boolean to indicate whether the keeper should call performUpkeep or not.\"}},\"checkErrorHandler(uint256,bytes)\":{\"params\":{\"errCode\":\"an uint value that represents the streams lookup error code.\",\"extraData\":\"context data from streams lookup process.\"},\"returns\":{\"performData\":\"bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.\",\"upkeepNeeded\":\"boolean to indicate whether the keeper should call performUpkeep or not.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"checkCallback(bytes[],bytes)\":{\"notice\":\"any contract which wants to utilize StreamsLookup feature needs to implement this interface as well as the automation compatible interface.\"},\"checkErrorHandler(uint256,bytes)\":{\"notice\":\"this is a new, optional function in streams lookup. It is meant to surface streams lookup errors.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\".deps/npm/@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol\":\"StreamsLookupCompatibleInterface\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\".deps/npm/@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol\":{\"keccak256\":\"0x425b2fbd5157912befe76769fa3556ebd9b3f1fd292e1df52229923ef679aee0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://73c5344cbe6d410e8b19a59e7ca6fbd130431c60aee9306b018539b6b1b3c8b9\",\"dweb:/ipfs/QmWG2QMTs9CCxEzMiF1fZgzUZQZJ6eGQ4pTQawnKpwC6dd\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {
+							"checkCallback(bytes[],bytes)": {
+								"notice": "any contract which wants to utilize StreamsLookup feature needs to implement this interface as well as the automation compatible interface."
+							},
+							"checkErrorHandler(uint256,bytes)": {
+								"notice": "this is a new, optional function in streams lookup. It is meant to surface streams lookup errors."
+							}
+						},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			".deps/npm/@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol": {
+				"ast": {
+					"absolutePath": ".deps/npm/@chainlink/contracts@1.3.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol",
+					"exportedSymbols": {
+						"StreamsLookupCompatibleInterface": [
+							40
+						]
+					},
+					"id": 41,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "StreamsLookupCompatibleInterface",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 40,
+							"linearizedBaseContracts": [
+								40
+							],
+							"name": "StreamsLookupCompatibleInterface",
+							"nameLocation": "120:32:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"errorSelector": "f055e4a2",
+									"id": 14,
+									"name": "StreamsLookup",
+									"nameLocation": "163:13:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 13,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 3,
+												"mutability": "mutable",
+												"name": "feedParamKey",
+												"nameLocation": "184:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 14,
+												"src": "177:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_memory_ptr",
+													"typeString": "string"
+												},
+												"typeName": {
+													"id": 2,
+													"name": "string",
+													"nodeType": "ElementaryTypeName",
+													"src": "177:6:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_string_storage_ptr",
+														"typeString": "string"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 6,
+												"mutability": "mutable",
+												"name": "feeds",
+												"nameLocation": "207:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 14,
+												"src": "198:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+													"typeString": "string[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 4,
+														"name": "string",
+														"nodeType": "ElementaryTypeName",
+														"src": "198:6:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_string_storage_ptr",
+															"typeString": "string"
+														}
+													},
+													"id": 5,
+													"nodeType": "ArrayTypeName",
+													"src": "198:8:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+														"typeString": "string[]"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 8,
+												"mutability": "mutable",
+												"name": "timeParamKey",
+												"nameLocation": "221:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 14,
+												"src": "214:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_memory_ptr",
+													"typeString": "string"
+												},
+												"typeName": {
+													"id": 7,
+													"name": "string",
+													"nodeType": "ElementaryTypeName",
+													"src": "214:6:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_string_storage_ptr",
+														"typeString": "string"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 10,
+												"mutability": "mutable",
+												"name": "time",
+												"nameLocation": "243:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 14,
+												"src": "235:12:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 9,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "235:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 12,
+												"mutability": "mutable",
+												"name": "extraData",
+												"nameLocation": "255:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 14,
+												"src": "249:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 11,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "249:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "176:89:0"
+									},
+									"src": "157:109:0"
+								},
+								{
+									"documentation": {
+										"id": 15,
+										"nodeType": "StructuredDocumentation",
+										"src": "270:577:0",
+										"text": " @notice any contract which wants to utilize StreamsLookup feature needs to\n implement this interface as well as the automation compatible interface.\n @param values an array of bytes returned from data streams endpoint.\n @param extraData context data from streams lookup process.\n @return upkeepNeeded boolean to indicate whether the keeper should call performUpkeep or not.\n @return performData bytes that the keeper should call performUpkeep with, if\n upkeep is needed. If you would like to encode data to decode later, try `abi.encode`."
+									},
+									"functionSelector": "4b56a42e",
+									"id": 27,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "checkCallback",
+									"nameLocation": "859:13:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 21,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 18,
+												"mutability": "mutable",
+												"name": "values",
+												"nameLocation": "893:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 27,
+												"src": "878:21:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+													"typeString": "bytes[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 16,
+														"name": "bytes",
+														"nodeType": "ElementaryTypeName",
+														"src": "878:5:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes_storage_ptr",
+															"typeString": "bytes"
+														}
+													},
+													"id": 17,
+													"nodeType": "ArrayTypeName",
+													"src": "878:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+														"typeString": "bytes[]"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 20,
+												"mutability": "mutable",
+												"name": "extraData",
+												"nameLocation": "918:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 27,
+												"src": "905:22:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 19,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "905:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "872:59:0"
+									},
+									"returnParameters": {
+										"id": 26,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 23,
+												"mutability": "mutable",
+												"name": "upkeepNeeded",
+												"nameLocation": "960:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 27,
+												"src": "955:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												},
+												"typeName": {
+													"id": 22,
+													"name": "bool",
+													"nodeType": "ElementaryTypeName",
+													"src": "955:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bool",
+														"typeString": "bool"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 25,
+												"mutability": "mutable",
+												"name": "performData",
+												"nameLocation": "987:11:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 27,
+												"src": "974:24:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 24,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "974:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "954:45:0"
+									},
+									"scope": 40,
+									"src": "850:150:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 28,
+										"nodeType": "StructuredDocumentation",
+										"src": "1004:537:0",
+										"text": " @notice this is a new, optional function in streams lookup. It is meant to surface streams lookup errors.\n @param errCode an uint value that represents the streams lookup error code.\n @param extraData context data from streams lookup process.\n @return upkeepNeeded boolean to indicate whether the keeper should call performUpkeep or not.\n @return performData bytes that the keeper should call performUpkeep with, if\n upkeep is needed. If you would like to encode data to decode later, try `abi.encode`."
+									},
+									"functionSelector": "0fb172fb",
+									"id": 39,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "checkErrorHandler",
+									"nameLocation": "1553:17:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 33,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 30,
+												"mutability": "mutable",
+												"name": "errCode",
+												"nameLocation": "1584:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 39,
+												"src": "1576:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 29,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "1576:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 32,
+												"mutability": "mutable",
+												"name": "extraData",
+												"nameLocation": "1610:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 39,
+												"src": "1597:22:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 31,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "1597:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1570:53:0"
+									},
+									"returnParameters": {
+										"id": 38,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 35,
+												"mutability": "mutable",
+												"name": "upkeepNeeded",
+												"nameLocation": "1652:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 39,
+												"src": "1647:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												},
+												"typeName": {
+													"id": 34,
+													"name": "bool",
+													"nodeType": "ElementaryTypeName",
+													"src": "1647:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bool",
+														"typeString": "bool"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 37,
+												"mutability": "mutable",
+												"name": "performData",
+												"nameLocation": "1679:11:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 39,
+												"src": "1666:24:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 36,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "1666:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1646:45:0"
+									},
+									"scope": 40,
+									"src": "1544:148:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 41,
+							"src": "110:1584:0",
+							"usedErrors": [
+								14
+							]
+						}
+					],
+					"src": "32:1663:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
